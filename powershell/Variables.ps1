@@ -1,4 +1,9 @@
-$files1 = Get-ChildItem ./
-$files2 = Get-ChildItem ../
 
-Compare-Object $files1 $files2 | Out-GridView 
+
+
+$url = "http://novocontent-integracao-ws-wf10-homol.grupotci.com.br/EasyContentService?wsdl"
+$webservicex = New-WebServiceProxy -Uri $url -namespace WebServiceProxy -Class GlobalWeatherSoap
+
+
+
+[xml]$lotes =  $webservicex.obterLotes();
