@@ -1,1 +1,1 @@
-Get-ChildItem -Path "." | Where-Object{Write-Host $_.DirectoryName}
+Get-ChildItem -Path -Filter 
